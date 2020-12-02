@@ -70,6 +70,26 @@ const App = () => {
                   />
                 </Navbar.Brand>
               </LinkContainer>
+              <NavDropdown
+                title="Group A"
+              >
+                <NavDropdown.Item>
+                  Example Page A1
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  Example Page A2
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown
+                title="Group B"
+              >
+                <NavDropdown.Item>
+                  Example Page B1
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  Example Page B2
+                </NavDropdown.Item>
+              </NavDropdown>
               <NavDropdown 
                 className="ml-auto pull-right" 
                 title="Profile"

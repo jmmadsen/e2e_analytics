@@ -11,7 +11,8 @@ const Home = () => {
 
   return (
     <div>
-      <header className="App-header">
+      <header className="App-home">
+        <br/>
         <h1>
           Home Page
         </h1>

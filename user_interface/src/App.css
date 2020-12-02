@@ -18,6 +18,15 @@
   /* color: white; */
 }
 
+.App-home {
+  background-color: #f9fafc;
+  min-height: 100vh;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.dropdown-toggle {
+  color: white
 }

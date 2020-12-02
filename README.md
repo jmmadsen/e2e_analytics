@@ -32,7 +32,6 @@ When deploying, make sure to update the axios.defaults.baseURL to the cloud URL 
 * CRA_URL=http://localhost:3000
 * MONGODB_URL=mongodb://admin:admin@localhost:27017
 * JWT_SECRET=WeNeedABetterSecretThanThisInProd
-* EXPIRES_IN=3600 (number of seconds before JWT expires, if left out defaults to 3600)
 
 2. run `npm install` inside `api`
 
