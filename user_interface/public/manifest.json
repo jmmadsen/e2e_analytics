@@ -1,6 +1,6 @@
 {
-  "short_name": "Crypto Market",
-  "name": "College Crypto Exchange App",
+  "short_name": "USAF VAULT",
+  "name": "USAF VAULT",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "favicon.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "favicon.ico",
       "type": "image/png",
       "sizes": "512x512"
     }
