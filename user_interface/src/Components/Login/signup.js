@@ -19,7 +19,7 @@ const SignUp = () => {
         setUserExists("");
       }
   
-      const { data } = await axios.get(`/check_user?username=${username}`);
+      const { data } = await axios.get(`/access/check_user?username=${username}`);
   
       if (data) {
         setUserExists(username);
@@ -27,7 +27,7 @@ const SignUp = () => {
       }
       setUserExists("");
   
-      await axios.post(`/add_user`, {
+      await axios.post(`/access/add_user`, {
         username,
         password
       });

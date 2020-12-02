@@ -6,7 +6,7 @@ const Home = () => {
 
   // sends user to Login screen if jwt expired
   useEffect(() => {
-    axios.get('/verify_jwt');
+    axios.get('/access/verify_jwt');
   }, [])
 
   return (

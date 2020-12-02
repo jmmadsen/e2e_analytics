@@ -15,7 +15,7 @@ const Login = () => {
 
     try {
 
-      const { status } = await axios.get(`/verify_user?username=${username}&password=${password}`);
+      const { status } = await axios.get(`/access/verify_user?username=${username}&password=${password}`);
 
       if (status === 200) {
         setIncorrect(false);

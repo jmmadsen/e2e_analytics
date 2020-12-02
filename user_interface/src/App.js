@@ -77,7 +77,7 @@ const App = () => {
               >
                 <NavDropdown.Item
                   onClick={async () => {
-                    await axios.get('/sign_out');
+                    await axios.get('/access/sign_out');
                     window.location.href = '/login';
                   }}
                 >

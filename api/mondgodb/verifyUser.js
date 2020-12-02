@@ -20,8 +20,7 @@ const verifyUser = async (client, username, password) => {
     }
 
     const token = jwt.sign({ username }, process.env.JWT_SECRET, {
-      expiresIn: 3600 // 1 hour
-      // expiresIn: 30 // 30 seconds
+      expiresIn: process.env.EXPIRES_IN || 3600 // 1 hour
     });
 
     await client.close();
