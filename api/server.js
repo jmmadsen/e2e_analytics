@@ -68,7 +68,7 @@ app.get('/check_user', async (req, res) => {
   const { username } = req.query;
 
   const client = await connectMongoDB();
-  const userExists = await checkUser(client, username);
+  const userExists = await checkUser(client, username.toLowerCase());
 
   if (userExists.length === 0) {
     res.send('false');
@@ -84,7 +84,7 @@ app.get('/get_user_info', authJWT, async (req, res) => {
   const { username } = req.query;
 
   const client = await connectMongoDB();
-  const user = await getUserInfo(client, username);
+  const user = await getUserInfo(client, username.toLowerCase());
 
   if (!user) {
     res.sendStatus(401);
@@ -99,7 +99,7 @@ app.get('/verify_user', async (req, res) => {
   const { username, password } = req.query;
 
   const client = await connectMongoDB();
-  const token = await verifyUser(client, username, password);
+  const token = await verifyUser(client, username.toLowerCase(), password);
 
   if (!token) {
     res.sendStatus(400);
@@ -115,7 +115,7 @@ app.post('/add_user', async (req, res) => {
   const { username, password } = req.body;
 
   const client = await connectMongoDB();
-  const result = await addUser(client, username, password);
+  const result = await addUser(client, username.toLowerCase(), password);
   res.send(result);
 
 })
