@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Parser } = require('json2csv');
+const Excel = require('exceljs');
 
 
 // NOTE: these routes are currently sending dummy data, but they should connect to Postgres or Mongo to query necessary data
@@ -111,5 +112,38 @@ router.get("/download_csv", async (req, res) => {
   }
 
 });
+
+router.get('/download_xlsx', async (req, res) => {
+
+  try {
+
+    let workbook = new Excel.Workbook();
+    let sheet = workbook.addWorksheet('Test');
+
+    sheet.columns = [
+      { header: 'Car', key: 'car', width: 30 },
+      { header: 'Price', key: 'price' },
+      { header: 'Color', key: 'color', width: 12 },
+    ]
+
+    sheet.addRow({ car: 'Audi', price: 1, color: 'blue' });
+    sheet.addRow({ car: 'BMW', price: 1, color: 'black' });
+    sheet.addRow({ car: 'Porsche', price: 1, color: 'green' });
+
+    // WRITES FILE, CONVERTS TO BASE64 FOR TRANSFER FROM SERVER TO CLIENT, AND RETURNS
+    const binaryFile = await workbook.xlsx.writeBuffer();
+    const base64 = binaryFile.toString('base64');
+
+    res.setHeader('Content-Type', "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    res.send(base64);
+
+  } catch(err) {
+
+    console.error(err);
+    res.sendStatus(400);
+
+  }
+
+})
 
 module.exports = router;
