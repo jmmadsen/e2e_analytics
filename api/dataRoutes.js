@@ -54,4 +54,10 @@ router.get('/linechart', async (req, res) => {
 
 })
 
+router.get('/map_data', async (req, res) => {
+
+  res.send('include relevant geodata here');
+
+})
+
 module.exports = router;

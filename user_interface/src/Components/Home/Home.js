@@ -53,7 +53,7 @@ const Home = () => {
                     Page A2
                   </Card.Title>
                   <Card.Text>
-                    This is a Card to hold info and the link to page A2.
+                    Example of Google Maps geodata.
                   </Card.Text>
                 </Card.Body>
                 <br/>
