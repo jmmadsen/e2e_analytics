@@ -60,4 +60,17 @@ router.get('/map_data', async (req, res) => {
 
 })
 
+router.get('/table_data', async (req, res) => {
+
+  res.send([
+    { firstName: 'John', lastName: 'Smith', age: 27, visits: 5, status: 'good', progress: 'n/a' },
+    { firstName: 'John', lastName: 'Smith', age: 27, visits: 5, status: 'good', progress: 'n/a' },
+    { firstName: 'John', lastName: 'Smith', age: 27, visits: 5, status: 'good', progress: 'n/a' },
+    { firstName: 'John', lastName: 'Smith', age: 27, visits: 5, status: 'good', progress: 'n/a' },
+    { firstName: 'John', lastName: 'Smith', age: 27, visits: 5, status: 'good', progress: 'n/a' },
+    { firstName: 'John', lastName: 'Smith', age: 27, visits: 5, status: 'good', progress: 'n/a' }
+  ]);
+
+})
+
 module.exports = router;

@@ -78,7 +78,7 @@ const Home = () => {
                     Page B1
                   </Card.Title>
                   <Card.Text>
-                    This is a Card to hold info and the link to page B1.
+                    Example of using tables.
                   </Card.Text>
                 </Card.Body>
                 <br/>

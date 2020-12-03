@@ -58,6 +58,8 @@ class MyFancyComponent extends React.PureComponent {
 
     const { loaded, error, data } = this.state;
 
+    console.log(data);
+
     if (!loaded) {
       return (
         <Spinner animation="border" variant="success"/>
