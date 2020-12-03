@@ -12,6 +12,8 @@ import SignUp from './Components/Login/signup';
 import Home from './Components/Home/Home';
 import NotFound from './Components/Home/NotFound';
 
+import A1 from './Components/Group A/Page1';
+
 import logo from './usaf_logo.png';
 
 
@@ -73,22 +75,30 @@ const App = () => {
               <NavDropdown
                 title="Group A"
               >
-                <NavDropdown.Item>
-                  Example Page A1
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  Example Page A2
-                </NavDropdown.Item>
+                <LinkContainer to="/groupa/1">
+                  <NavDropdown.Item>
+                    Example Page A1
+                  </NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/groupa/2">
+                  <NavDropdown.Item>
+                    Example Page A2
+                  </NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
               <NavDropdown
                 title="Group B"
               >
-                <NavDropdown.Item>
-                  Example Page B1
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  Example Page B2
-                </NavDropdown.Item>
+                <LinkContainer to="/groupb/1">
+                  <NavDropdown.Item>
+                    Example Page B1
+                  </NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/groupb/2">
+                  <NavDropdown.Item>
+                    Example Page B2
+                  </NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
               <NavDropdown 
                 className="ml-auto pull-right" 
@@ -111,6 +121,7 @@ const App = () => {
             <Route exact path="/" component={Home}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/login" component={Login}/>
+            <Route path="/groupa/1" component={A1}/>
             <Route component={NotFound}/>
           </Switch>
         </div>

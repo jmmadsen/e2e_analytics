@@ -12,6 +12,8 @@ This entire application is currently using self-built JWT auth. The API sends a 
 
 When deploying, make sure to update the axios.defaults.baseURL to the cloud URL in `App.js` in the client. This is compiled at build time, and cannot be controlled by an environment variable.
 
+It is assumed the User Interface does not need to be optimized for mobile. If it does, additional attention will need to be paid to the React-Bootstrap Layout objects and sizings.
+
 ## Running Locally
 
 ### user_interface
@@ -32,6 +34,7 @@ When deploying, make sure to update the axios.defaults.baseURL to the cloud URL 
 * CRA_URL=http://localhost:3000
 * MONGODB_URL=mongodb://admin:admin@localhost:27017
 * JWT_SECRET=WeNeedABetterSecretThanThisInProd
+* PORT=8080
 
 2. run `npm install` inside `api`
 

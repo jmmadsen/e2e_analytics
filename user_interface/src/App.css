@@ -18,7 +18,7 @@
   /* color: white; */
 }
 
-.App-home {
+.App-home, .App-a1 {
   background-color: #f9fafc;
   min-height: 100vh;
 }

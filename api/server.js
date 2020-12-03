@@ -5,7 +5,9 @@ require('dotenv').config()
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
+const authJWT = require('./middleware/authJWT');
 const loginRoutes = require('./loginRoutes');
+const dataRoutes = require('./dataRoutes');
 
 
 app.listen(process.env.PORT || 8080, () => console.log("vault_db api is listening on port 8080!"));
@@ -50,3 +52,6 @@ app.get('/health_check', (req, res) => {
 
 // routes for user login/access
 app.use('/access', loginRoutes);
+
+// routes for accessing data from postgres
+app.use('/data', authJWT,  dataRoutes);
