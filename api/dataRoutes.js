@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { Parser } = require('json2csv');
 
 
 // NOTE: these routes are currently sending dummy data, but they should connect to Postgres or Mongo to query necessary data
@@ -72,5 +73,43 @@ router.get('/table_data', async (req, res) => {
   ]);
 
 })
+
+router.get("/download_csv", async (req, res) => {
+
+  const fields = ['car', 'price', 'color'];
+  const opts = { fields };
+  const myCars = [
+    {
+      "car": "Audi",
+      "price": 1,
+      "color": "blue"
+    }, {
+      "car": "BMW",
+      "price": 1,
+      "color": "black"
+    }, {
+      "car": "Porsche",
+      "price": 1,
+      "color": "green"
+    }
+  ];
+
+  try {
+
+    const parser = new Parser(opts);
+    const csv = parser.parse(myCars);
+
+    res.setHeader('Content-disposition', 'attachment; filename=data.csv');
+    res.set('Content-Type', 'text/csv');
+    res.status(200).send(csv);
+
+  } catch(err) {
+
+    console.error(err);
+    res.sendStatus(400);
+
+  }
+
+});
 
 module.exports = router;

@@ -16,6 +16,7 @@ import A1 from './Components/Group A/Page1';
 import A2 from './Components/Group A/Page2';
 
 import B1 from './Components/Group B/Page1';
+import B2 from './Components/Group B/Page2';
 
 import logo from './usaf_logo.png';
 
@@ -127,6 +128,7 @@ const App = () => {
             <Route path="/groupa/1" component={A1}/>
             <Route path="/groupa/2" component={A2}/>
             <Route path="/groupb/1" component={B1}/>
+            <Route path="/groupb/2" component={B2}/>
             <Route component={NotFound}/>
           </Switch>
         </div>

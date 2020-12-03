@@ -100,7 +100,7 @@ const Home = () => {
                     Page B2
                   </Card.Title>
                   <Card.Text>
-                    This is a Card to hold info and the link to page B2.
+                    Random useful examples from past UIs.
                   </Card.Text>
                 </Card.Body>
                 <br/>
