@@ -4,6 +4,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import DownloadCSV from './DownloadCSV';
 import DownloadXLSX from './DownloadXLSX';
+import Filters from './Filters';
 
 
 const B2 = () => {
@@ -61,7 +62,7 @@ const B2 = () => {
                     Filters Example
                   </Card.Title>
                   <br/>
-                  
+                  <Filters/>
                 </Card.Body>
               </Card>
             </Col>
