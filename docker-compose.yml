@@ -43,6 +43,16 @@ services:
       - vault_network
     volumes:
       - mongodb_data_container:/data/db
+  postgres:
+    image: postgres
+    container_name: postgres
+    expose:
+      - 5432
+    environment:
+      - PG_HOST=localhost
+      - PG_USER=admin
+      - PG_PASSWORD=admin
+      - PG_DATABASE=vault_pg
 
 volumes:
   mongodb_data_container:
