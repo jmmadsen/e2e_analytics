@@ -10,7 +10,7 @@ services:
     ports: 
       - "80:80"
     environment: 
-      - REACT_APP_API_URL=https://vault-ui-dev-kaiju.apps.oregon.aiplatformpoc.com:8080
+      - REACT_APP_API_URL=https://vault-api-dev-kaiju.apps.oregon.aiplatformpoc.com
       # NOTE: the above env variable isn't used in build, need to change directly in code
     networks:
       - vault_network
