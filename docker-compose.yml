@@ -10,7 +10,7 @@ services:
     ports: 
       - "80:80"
     environment: 
-      - REACT_APP_API_URL=http://localhost:8080
+      - REACT_APP_API_URL=https://vault-ui-dev-kaiju.apps.oregon.aiplatformpoc.com:8080
       # NOTE: the above env variable isn't used in build, need to change directly in code
     networks:
       - vault_network
@@ -25,7 +25,7 @@ services:
     environment:
       # - NODE_ENV=development
       - NODE_ENV=production
-      - CRA_URL=http://localhost
+      - CRA_URL=https://vault-ui-dev-kaiju.apps.oregon.aiplatformpoc.com
       - MONGODB_URL=mongodb://admin:admin@mongodb:27017
       - JWT_SECRET=YouAreMySunshine
     networks:
