@@ -3,10 +3,37 @@ const router = express.Router();
 const { Parser } = require('json2csv');
 const Excel = require('exceljs');
 
+const knex = require('./postgres/connect');
+
 
 // NOTE: these routes are currently sending dummy data, but they should connect to Postgres or Mongo to query necessary data
 
 router.get('/barchart', async (req, res) => {
+
+  /*
+    THIS IS AN EXAMPLE OF WHAT TO DO WITH KNEX
+
+    try {
+
+      const result = await knex('table_name')
+        .select(
+          'column1',
+          'column2'
+        )
+        .where('column1', '<', 15)
+        .groupBy('column1')
+
+    } catch(err) {
+
+      console.error(err);
+      res.sendStatus(400);
+
+    }
+
+    recommend formatting data into datasets.data array below. no need to develop the rest of
+    the object in the API - most of the keys will stay constant in the client
+
+  */
 
   res.send({ 
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],

@@ -28,6 +28,8 @@ It is assumed the User Interface does not need to be optimized for mobile. If it
 
 ### api
 
+*PLEASE NOTE: on error in API routes, send back a status of 400. A status of 401 or 403 will cause the client to logout*
+
 1. Add a `.env` under the `api` directory that includes:
 
 * NODE_ENV=development
@@ -35,6 +37,10 @@ It is assumed the User Interface does not need to be optimized for mobile. If it
 * MONGODB_URL=mongodb://admin:admin@localhost:27017
 * JWT_SECRET=WeNeedABetterSecretThanThisInProd
 * PORT=8080
+* PG_HOST=localhost
+* PG_USER=admin
+* PG_PASSWORD=admin
+* PG_DATABASE=vault_pg
 
 2. run `npm install` inside `api`
 
@@ -50,4 +56,4 @@ It is assumed the User Interface does not need to be optimized for mobile. If it
 
 1. make sure you have Docker running
 
-2. TBD
+2. run `docker run -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=vault_pg -p 5432:5432 postgres`
