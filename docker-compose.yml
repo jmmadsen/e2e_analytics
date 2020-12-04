@@ -49,10 +49,9 @@ services:
     expose:
       - 5432
     environment:
-      - PG_HOST=localhost
-      - PG_USER=admin
-      - PG_PASSWORD=admin
-      - PG_DATABASE=vault_pg
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=vault_pg
 
 volumes:
   mongodb_data_container:
