@@ -37,6 +37,8 @@ const corsOptions = {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
+      console.log(origin);
+      console.log(process.env.CRA_URL)
       callback(new Error('Not allowed by CORS'))
     }
   },
