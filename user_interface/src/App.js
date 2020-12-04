@@ -25,7 +25,7 @@ import logo from './usaf_logo.png';
 const App = () => {
 
   // set base url for all axios requests to API, using env variable
-  axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_API_URL : 'https://vault-ui-dev-kaiju.apps.oregon.aiplatformpoc.com:8080';
+  axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_API_URL : 'http://vault-ui-dev-kaiju.apps.oregon.aiplatformpoc.com:8080';
 
   // send cookie with requests
   axios.interceptors.request.use(
