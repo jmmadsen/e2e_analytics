@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 import { Row, ButtonGroup, Dropdown, Button } from 'react-bootstrap';
 
-import { useFilter } from "../../Context/Filters";
+import { FilterContext } from "../../Context/Filters";
 
 
 class Filters extends Component {
+
+  static contextType = FilterContext;
 
   constructor(props) {
     super(props);
 
     this.state = {
+
+    }
+  }
+
+  componentDidMount = () => {
+
+    this.setState({ ...this.context.filters })
+
+  }
+
+  onClear = () => {
+
+    this.context.setFilters({
       date: 'Date',
       country: 'Country',
       state: 'State',
@@ -18,10 +33,7 @@ class Filters extends Component {
       countryVariant: "primary",
       stateVariant: "primary",
       cityVariant: "primary"
-    }
-  }
-
-  onClear = () => {
+    });
 
     this.setState({
       date: 'Date',
@@ -37,18 +49,22 @@ class Filters extends Component {
   }
 
   setDate = (date) => {
+    this.context.setFilters({ ...this.context.filters, date, dateVariant: 'success' });
     this.setState({ date, dateVariant: 'success' });
   }
 
   setCountry = (country) => {
+    this.context.setFilters({ ...this.context.filters, country, countryVariant: 'success' });
     this.setState({ country, countryVariant: 'success' });
   }
 
   setStates = (state) => {
+    this.context.setFilters({ ...this.context.filters, state, stateVariant: 'success' });
     this.setState({ state, stateVariant: 'success' });
   }
 
   setCity = (city) => {
+    this.context.setFilters({ ...this.context.filters, city, cityVariant: 'success' });
     this.setState({ city, cityVariant: 'success' });
   }
 
@@ -161,5 +177,7 @@ class Filters extends Component {
   }
 
 }
+
+Filters.contextType = FilterContext;
 
 export default Filters;

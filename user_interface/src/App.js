@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 import { Navbar, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from 'axios';
-import { AuthContext } from "./Context/Auth";
+import { FilterContext } from "./Context/Filters";
 // import PrivateRoute from './PrivateRoute';
 
 import Login from './Components/Login/login';
@@ -53,9 +54,21 @@ const App = () => {
     }
   )
 
+  // controls app state for filter context
+  const [filters, setFilters] = useState({
+    date: 'Date',
+    country: 'Country',
+    state: 'State',
+    city: 'City',
+    dateVariant: "primary",
+    countryVariant: "primary",
+    stateVariant: "primary",
+    cityVariant: "primary"
+  })
+
   return (
     
-    <AuthContext.Provider value={''}>
+    <FilterContext.Provider value={{ filters, setFilters }}>
       <Router>
         {
           window.location.href.includes('signup') ?
@@ -133,7 +146,7 @@ const App = () => {
           </Switch>
         </div>
       </Router>
-    </AuthContext.Provider>
+    </FilterContext.Provider>
     
   );
 

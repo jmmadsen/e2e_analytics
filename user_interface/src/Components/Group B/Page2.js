@@ -25,7 +25,11 @@ const B2 = () => {
         <Container>
           <Row>
             These are some random components I've used frequently in other UIs. Downloading datasets as a CSV or XLSX is common,
-            whether from a table or graph. Filters can be used to control the data across the entire application. I would recommend
+            whether from a table or graph. 
+          </Row>
+          <br/>
+          <Row>
+            Filters can be used to control the data across the entire application. I would recommend
             setting filter data in a React Context, so its available across the entire app without passing down throughout props.
           </Row>
           <br/>
