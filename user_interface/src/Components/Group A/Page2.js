@@ -22,8 +22,8 @@ const A2 = () => {
         <br/>
         <Container>
           <Row>
-            Often these data dashboards have to plot geolocation data. This is a basic example of how to integrate Google
-            Maps api. You will need to to sign up for and include an API key in the Map.js component.
+            Often analytics dashboards have to plot geolocation data. This is a basic example of how to integrate Google
+            Maps API. You will need to to sign up for and include an API key in the Map.js component.
           </Row>
           <br/>
           <Row>

@@ -19,13 +19,13 @@ import A2 from './Components/Group A/Page2';
 import B1 from './Components/Group B/Page1';
 import B2 from './Components/Group B/Page2';
 
-import logo from './usaf_logo.png';
+import logo from './react.png';
 
 
 const App = () => {
 
   // set base url for all axios requests to API, using env variable
-  axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_API_URL : 'http://vault-api-dev-kaiju.apps.oregon.aiplatformpoc.com';
+  axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_API_URL : 'http://localhost:8080' /* 'http://your-aws-or-whatever-cloud-url-here' */;
 
   // send cookie with requests
   axios.interceptors.request.use(

@@ -29,6 +29,15 @@ const A1 = () => {
           </Row>
           <br/>
           <Row>
+            <a 
+              style={{ margin: 'auto' }}
+              href='https://github.com/reactchartjs/react-chartjs-2'
+            >
+              https://github.com/reactchartjs/react-chartjs-2
+            </a>
+          </Row>
+          <br/>
+          <Row>
             <Col>
               <Card>
                 <Card.Body>

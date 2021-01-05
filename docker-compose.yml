@@ -4,30 +4,32 @@ services:
   user_interface:
     build:
       context: ./user_interface
-    image: sharing_ui
-    container_name: sharing_ui
+    image: starter_ui
+    container_name: starter_ui
     restart: always
     ports: 
       - "80:80"
     environment: 
-      - REACT_APP_API_URL=https://vault-api-dev-kaiju.apps.oregon.aiplatformpoc.com
+      # - REACT_APP_API_URL=https://your-aws-or-whatever-cloud-url-here.com
+      - REACT_APP_API_URL=http://localhost:80
       # NOTE: the above env variable isn't used in build, need to change directly in code
     networks:
       - vault_network
   api:
     build:
       context: ./api
-    image: sharing_api
-    container_name: sharing_api
+    image: starter_api
+    container_name: starter_api
     restart: always
     ports:
       - "8080:8080"
     environment:
       # - NODE_ENV=development
       - NODE_ENV=production
-      - CRA_URL=https://vault-ui-dev-kaiju.apps.oregon.aiplatformpoc.com
+      # - CRA_URL=https://your-aws-or-whatever-cloud-url-here.com
+      - CRA_URL=http://localhost
       - MONGODB_URL=mongodb://admin:admin@mongodb:27017
-      - JWT_SECRET=YouAreMySunshine
+      - JWT_SECRET=ThisNeedsToBeAMoreComplicatedSecret
     networks:
       - vault_network
   mongodb:

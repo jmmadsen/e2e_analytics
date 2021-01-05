@@ -19,7 +19,7 @@ const Home = () => {
           Home Page
         </h1>
         <h4>
-          This is not a finalized Home Page, just an example
+          Easy Example of Navigation Cards
         </h4>
         <br/>
         <Container>

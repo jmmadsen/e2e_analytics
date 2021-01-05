@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import logo from './usaf_logo.png';
+import logo from './react.png';
 
 
 const Login = () => {
@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <header className="App-header">
       <h1>
-        VAULT Code Challenge - UI Dashboard
+        Starter Analytics UI - Scaffolding
         </h1>
       <img 
         src={logo} 

@@ -24,13 +24,15 @@ const B2 = () => {
         <br/>
         <Container>
           <Row>
-            These are some random components I've used frequently in other UIs. Downloading datasets as a CSV or XLSX is common,
+            These are some random components I've used frequently in past dashboards I have created. Downloading datasets as a CSV or XLSX is common,
             whether from a table or graph. 
           </Row>
           <br/>
           <Row>
             Filters can be used to control the data across the entire application. I would recommend
-            setting filter data in a React Context, so its available across the entire app without passing down throughout props.
+            setting filter data in a React Context, so its available across the entire app without passing down throughout props. I have
+            set this filter in an example context, and the data will persist across page changes.
+            If you wish to persist data across user refreshes, you will need to utilize caching.
           </Row>
           <br/>
           <Row>

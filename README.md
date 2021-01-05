@@ -1,20 +1,22 @@
-# vault_react_ui
-* React UI
+# E2E Analytics Dashboard Application
+* React Analytics UI
 * Node.js Express API
 * Mongo DB
 * Postgresql
 
-## General Notes
+## Overview
 
-I have included the React UI and an API in here for connecting to MongoDB and Postgres. I also included a docker-compose file for deploying into the cloud. The most important piece of this is the UI foundation, so if needed the `user_interface` directory can be pulled out and refactored accordingly.
+This repository is meant to be a starter kit for creating your own dashboard. It includes a React UI, an Express API, and two databases (Postgres and MongoDB). A basic JWT authentication system has been created between React and Express - users must log in order to access the various pages and data. All the connections have been created and organized, and I have recommended some best practices I have learned in my career when designing dashboards for various clients.
 
-This entire application is currently using self-built JWT auth. The API sends a cookie to the browser, which then is used to access protected routes in the API. If a route returns a 401 or 403, the axios interceptor in the client will redirect you to the login page. This is an *okay* method of authentication, not sure how particular we want to be in the code challenge.
+Within the React application / pages itself, I organized different components that I find myself using the most often, with simple examples to follow. The data is retrieved from the API. In my example, the data is hardcoded to the API, but connections have been made to Postgres and MongoDB to query from there.
 
-When deploying, make sure to update the axios.defaults.baseURL to the cloud URL in `App.js` in the client. This is compiled at build time, and cannot be controlled by an environment variable.
+This dashboard can be a good scaffolding from which to learn more about any individual component, or to extend into your own application. The containerization for each microservices has also been created.
 
-It is assumed the User Interface does not need to be optimized for mobile. If it does, additional attention will need to be paid to the React-Bootstrap Layout objects and sizings.
+## Running Locally - Docker
 
-## Running Locally
+To see this application as is without needing to install anything, simply navigate to the root directory, run `docker-compose up`, and visit `http://localhost:80` in your browser. If you wish to eventually deploy this application with your changes, you will need to rebuild these images to see your updates.
+
+## Running Locally - Development
 
 ### user_interface
 

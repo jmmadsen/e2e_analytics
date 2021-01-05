@@ -22,7 +22,7 @@ const B1 = () => {
         <br/>
         <Container>
           <Row>
-            This is an example of a page that uses react-table. Most every use case will require tables of some sort. An important 
+            This is an example of a page that uses react-table. Most every analytics dashboard requires tables of some sort. An important 
             consideration beforehand is whether you want client-side pagination (for small datasets), or server-side
             pagination (for larger datasets). You can also include sorting & search bars (built into react-table), 
             or download to CSV capabilities (build yourself).
