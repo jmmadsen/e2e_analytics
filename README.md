@@ -30,7 +30,7 @@ To see this application as is without needing to install anything, simply naviga
 
 ### api
 
-*PLEASE NOTE: on error in API routes, send back a status of 400. A status of 401 or 403 will cause the client to logout*
+*PLEASE NOTE: on error in API routes, send back a status of 500. A status of 401 or 403 will cause the client to logout*
 
 1. Add a `.env` under the `api` directory that includes:
 
